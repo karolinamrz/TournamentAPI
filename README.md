@@ -33,7 +33,7 @@ Zapisz ID turnieju z odpowiedzi
   add2: addParticipant(tournamentId: 1, userId: 2)
 }
 
-6. Rozpoczecie turnieju:
+5. Rozpoczecie turnieju:
    
    mutation {
   startTournament(tournamentId: 1)
@@ -64,7 +64,7 @@ mutation {
   }
 }
 
-9. Podgląd drabinki turniejowej (nie wymaga logowania)
+8. Podgląd drabinki turniejowej (nie wymaga logowania)
     
 query {
   tournaments(where: { id: { eq: 1 } }) {
@@ -81,7 +81,7 @@ query {
   }
 }
 
-11. Funkcjonalności
+9. Funkcjonalności
 
 Rejestracja i logowanie
 

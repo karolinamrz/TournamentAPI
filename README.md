@@ -1,12 +1,14 @@
 Instrukcja: 
 
 1. Rejestracja graczy:
+   
 mutation {
   p1: registerUser(firstName: "Jan", lastName: "Kowalski", email: "jan@test.com", password: "123")
   p2: registerUser(firstName: "Anna", lastName: "Nowak", email: "anna@test.com", password: "123")
 }
 
 2.Logowanie i pobieranie tokena
+
  mutation {
  loginUser(email: "jan@test.com",  password: "123")
 }
@@ -25,12 +27,14 @@ Skopiuj token z odpowiedzi
 Zapisz ID turnieju z odpowiedzi
 
 4. Dodawanie uczetnikow:
+   
  mutation {
   add1: addParticipant(tournamentId: 1, userId: 1)
   add2: addParticipant(tournamentId: 1, userId: 2)
 }
 
-5. Rozpoczecie turnieju:
+6. Rozpoczecie turnieju:
+   
    mutation {
   startTournament(tournamentId: 1)
 }
@@ -38,6 +42,7 @@ Zapisz ID turnieju z odpowiedzi
 System automatycznie generuje drabinkę turniejową
 
 6. Podgląd swoich meczów:
+   
    query {
   myMatches {
     id
@@ -51,6 +56,7 @@ System automatycznie generuje drabinkę turniejową
 Jeśli widzisz błąd "nie masz uprawnień", sprawdź czy jesteś zalogowany
 
 7. Rozegranie meczu
+   
 mutation {
   playMatch(matchId: 1, winnerId: 1) {
     id
@@ -58,7 +64,8 @@ mutation {
   }
 }
 
-8. Podgląd drabinki turniejowej (nie wymaga logowania)
+9. Podgląd drabinki turniejowej (nie wymaga logowania)
+    
 query {
   tournaments(where: { id: { eq: 1 } }) {
     name
@@ -74,9 +81,15 @@ query {
   }
 }
 
-9. Funkcjonalności
+11. Funkcjonalności
+
 Rejestracja i logowanie
+
 Tworzenie turniejów pucharowych
+
 Automatyczne generowanie drabinki
+
 Rozgrywanie meczów
+
 Pobieranie swoich meczów (po zalogowaniu)
+
